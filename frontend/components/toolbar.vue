@@ -12,6 +12,13 @@
       <h4 />
     </v-toolbar-title>
     <v-spacer />
+    <v-btn icon v-on="on" class="ma-0 ml-5">
+      <router-link :to="{ name: 'shop'}">
+        <div>
+          <img src="bag-icon.png" width="26px" height="26px">
+        </div>
+      </router-link>
+    </v-btn>
     <v-btn icon link v-if="!logged_user" @click="open_login_dialog($event)">
       <span>Sign in</span>
     </v-btn>
