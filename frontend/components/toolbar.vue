@@ -79,7 +79,7 @@ export default {
     async logout () {
       await api.logout()
       this.$store.commit('auth/setCurrentUser', null)
-      Snacks.show(this.$store, {text: 'Até logo!'})
+      Snacks.show(this.$store, {text: 'See you soon!'})
     }
   }
 }
