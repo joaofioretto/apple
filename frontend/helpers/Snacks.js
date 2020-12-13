@@ -3,7 +3,7 @@ export default {
     store.commit('snack/set', {
       visible: true,
       text: options.text,
-      color: options.color || 'success',
+      color: options.color || 'space-grey',
       timeout: options.timeout || 6000
     })
   }

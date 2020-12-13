@@ -9,9 +9,7 @@
       </router-link>
     </v-btn>
     <v-toolbar-title>
-      <h4>
-        Apple
-      </h4>
+      <h4 />
     </v-toolbar-title>
     <v-spacer />
     <v-btn icon link v-if="!logged_user" @click="open_login_dialog($event)">

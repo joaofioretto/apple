@@ -1,12 +1,10 @@
 <template>
   <v-layout justify-center align-content-space-around>
     <!-- <v-btn color="success" :to="{name: 'todos'}">What TODO next?</v-btn> -->
-    <div class="logo">
+    <div class="top">
       <img src="apple-logo-1.png" width="88px" height="104px">
+      <h1>Think different.</h1>
     </div>
-    <!-- <div class="logo">
-      <h1>AirPods Max</h1>
-    </div> -->
   </v-layout>
 </template>
 
@@ -20,7 +18,10 @@ export default {
 </script>
 
 <style>
-h4 {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  }
+.top {
+    justify-items: center;
+}
+h1 {
+  font-size: 162px;
+}
 </style>
