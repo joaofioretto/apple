@@ -47,7 +47,6 @@ export default {
       this.loading = true
       this.error = false
       const user = await api.login(this.username, this.password)
-      debugger
       if (user) {
         this.$store.commit('auth/setCurrentUser', user)
         this.visible = false
