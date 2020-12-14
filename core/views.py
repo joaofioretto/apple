@@ -4,7 +4,7 @@ from django.http.response import HttpResponse, JsonResponse
 from django.contrib import auth
 from commons.django_model_utils import get_or_none
 from commons.django_views_utils import ajax_login_required
-from core.service import log_svc, todo_svc, globalsettings_svc
+from core.service import log_svc, todo_svc, globalsettings_svc, user_svc
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -34,6 +34,16 @@ def logout(request):
     auth.logout(request)
     return HttpResponse('{}', content_type='application/json')
 
+
+def signup(request):
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    username = request.POST['username']
+    email = request.POST['email']
+    password = request.POST['password']
+    user_svc.create_user(first_name, last_name, username, email, password)
+    return JsonResponse({})
+    
 
 def whoami(request):
     i_am = {

@@ -7,6 +7,9 @@ export default {
   logout () {
     return post('/api/logout')
   },
+  signup (first_name, last_name, username, email, password) {
+    return post('/api/signup', {first_name, last_name, username, email, password})
+  },
   whoami () {
     return get('/api/whoami')
   },

@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="visible" max-width="500px">
     <v-card>
-      <v-card-title>Log in</v-card-title>
+      <v-card-title>Login</v-card-title>
       <v-card-text>
         <v-container fluid>
           <v-text-field label="Username" required v-model="username" />
@@ -10,9 +10,10 @@
         </v-container>
       </v-card-text>
       <v-card-actions>
+        <v-btn class="blue--text darken-1" text @click="redirect(); close()">Signup</v-btn>
         <v-spacer />
-        <v-btn class="blue--text darken-1" text @click="close()">Cancel</v-btn>
-        <v-btn class="blue--text darken-1" text @click="login()" :loading="loading" :disabled="loading">Login</v-btn>
+        <v-btn class="red--text darken-1" text @click="close()">Cancel</v-btn>
+        <v-btn class="gray--text darken-1" text @click="login()" :loading="loading" :disabled="loading">Login</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -39,10 +40,14 @@ export default {
     close () {
       this.visible = false
     },
+    redirect () {
+      this.$router.push({ name: 'signup' })
+    },
     async login () {
       this.loading = true
       this.error = false
       const user = await api.login(this.username, this.password)
+      debugger
       if (user) {
         this.$store.commit('auth/setCurrentUser', user)
         this.visible = false

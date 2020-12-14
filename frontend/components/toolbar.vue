@@ -19,7 +19,7 @@
         </div>
       </router-link>
     </v-btn>
-    <v-btn icon link v-if="!logged_user" @click="open_login_dialog($event)">
+    <v-btn link v-if="!logged_user" @click="open_login_dialog($event)">
       <span>Sign in</span>
     </v-btn>
 
@@ -56,7 +56,7 @@
         </v-list>
       </v-card>
     </v-menu>
-    <v-app-bar-nav-icon @click.stop="state.drawerRight = !state.drawerRight" />
+    <!-- <v-app-bar-nav-icon @click.stop="state.drawerRight = !state.drawerRight" /> -->
     <login-dialog ref="login_dialog" />
   </v-app-bar>
 </template>

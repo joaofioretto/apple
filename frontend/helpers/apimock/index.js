@@ -11,6 +11,9 @@ export default {
   logout () {
     return mockasync({})
   },
+  signup (first_name, last_name, username, email, password) {
+    return mockasync(zuck)
+  },
   whoami () {
     const iam = {authenticated: keepLoggedIn}
     if (iam.authenticated) {

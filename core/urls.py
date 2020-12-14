@@ -5,6 +5,7 @@ urlpatterns = [
     path('api/dapau', views.dapau),
     path('api/login', views.login),
     path('api/logout', views.logout),
+    path('api/signup', views.signup),
     path('api/whoami', views.whoami),
     path('api/settings', views.settings),
     path('api/add_todo', views.add_todo),
